@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+footer {
+  min-height: 50px;
+}
+
+a {
+  font-weight: bold;
+  color: red;
+  width: max-content;
+}
+
+.agent-icon {
+
+}
+
+.agent-icon .agent-image {
+  width: 96px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.gizmo {
+  max-width: 56px;
+}
