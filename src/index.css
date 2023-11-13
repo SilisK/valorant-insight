@@ -28,6 +28,10 @@ a {
   width: max-content;
 }
 
+.weapon-icon {
+  width: 256px;
+}
+
 .weapon-icon .weapon-image img {
   max-height: 96px;
 }
