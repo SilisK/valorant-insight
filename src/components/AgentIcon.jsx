@@ -4,7 +4,10 @@ export default function AgentIcon({ agent }) {
       <div className="agent-image">
         <img src={agent.displayIconSmall} />
       </div>
-      <b>{agent.displayName}</b>
+      <b>
+        {agent.displayName}
+        {agent.isBaseContent ? " (OG)" : null}
+      </b>
     </div>
   );
 }
