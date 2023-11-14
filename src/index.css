@@ -26,6 +26,11 @@ a {
   font-weight: bold;
   color: red;
   width: max-content;
+  cursor: pointer;
+}
+
+.info-page img {
+  max-width: 556px;
 }
 
 .weapon-icon {
