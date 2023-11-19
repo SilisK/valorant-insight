@@ -11,6 +11,9 @@ export default function Navbar({ setPage }) {
       <a href="https://valorant-api.com/" target="_blank">
         API Source
       </a>
+      <a>
+        About
+      </a>
     </nav>
   );
 }

@@ -52,9 +52,9 @@ function App() {
           <InfoPage info={info} setPage={setPage} />
         ) : (
           <>
-            <div className="px-2 sm:px-5 grid gap-5 py-5 w-full">
-              <h1 className="text-6xl sm:text-8xl font-bold">Agents</h1>
-              <div className="grid gap-10 grid-flow-col place-items-center overflow-x-scroll sm:bg-white sm:shadow-md sm:rounded-xl px-1 py-3 sm:p-8">
+            <div className="grid gap-5 py-5 w-full">
+              <h1 className="px-5 text-6xl sm:text-8xl font-bold">Agents</h1>
+              <div className="grid gap-10 grid-flow-col place-items-center overflow-x-scroll px-1 py-3 sm:p-8">
                 {agents ? (
                   agents.map((agent, i) => (
                     <AgentIcon
@@ -73,9 +73,9 @@ function App() {
               </div>
             </div>
             {/*  */}
-            <div className="px-2 sm:px-5 grid gap-5 py-5 w-full">
-              <h1 className="text-6xl sm:text-8xl font-bold">Weapons</h1>
-              <div className="grid gap-10 grid-flow-col place-items-center overflow-x-scroll sm:bg-white sm:shadow-md sm:rounded-xl px-1 py-3 sm:p-8">
+            <div className="grid gap-5 py-5 w-full">
+              <h1 className="px-5 text-6xl sm:text-8xl font-bold">Weapons</h1>
+              <div className="grid gap-10 grid-flow-col place-items-center overflow-x-scroll px-1 py-3 sm:p-8">
                 {weapons ? (
                   weapons.map((weapon, i) => (
                     <WeaponIcon
@@ -94,9 +94,9 @@ function App() {
               </div>
             </div>
             {/*  */}
-            <div className="px-2 sm:px-5 grid gap-5 py-5 w-full">
-              <h1 className="text-6xl sm:text-8xl font-bold">Maps</h1>
-              <div className="grid gap-10 sm:grid-flow-col place-items-center sm:overflow-x-scroll sm:bg-white sm:shadow-md sm:rounded-xl px-1 py-3 sm:p-8">
+            <div className="grid gap-5 py-5 w-full">
+              <h1 className="px-5 text-6xl sm:text-8xl font-bold">Maps</h1>
+              <div className="grid gap-10 sm:grid-flow-col place-items-center sm:overflow-x-scroll px-1 py-3 sm:p-8">
                 {maps ? (
                   maps.map((map, i) => (
                     <MapIcon
