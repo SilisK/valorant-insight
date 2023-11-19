@@ -45,7 +45,7 @@ function App() {
     <div className="app min-h-screen grid">
       <Navbar setPage={setPage} />
       <main
-        className="grid gap-20 pb-20 place-items-center w-full min-h-screen
+        className="grid gap-20 pb-20 place-items-center min-h-screen
        items-start"
       >
         {page === "Info" ? (

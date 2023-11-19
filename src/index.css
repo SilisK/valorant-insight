@@ -42,6 +42,10 @@ a {
   max-width: 556px;
 }
 
+.info-page.map img {
+  max-width: none;
+}
+
 .weapon-icon {
   width: 256px;
 }
