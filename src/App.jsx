@@ -1,11 +1,28 @@
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
+// COMPONENTS
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// PAGES
+import Welcome from "./pages/Welcome";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import NotFound from "./pages/NotFound";
 
 function App() {
+  const [profile, setProfile] = useState();
+
   const [agents, setAgents] = useState();
   const [weapons, setWeapons] = useState();
   const [maps, setMaps] = useState();
 
   useEffect(() => {
+    if (localStorage.getItem("valorant-insight-data")) {
+      setProfile(JSON.parse("valorant-insight-data"));
+    }
+
     fetch("https://valorant-api.com/v1/agents")
       .then((response) => response.json())
       .then((json) => {
@@ -28,9 +45,23 @@ function App() {
       .catch((error) => {});
   }, []);
 
-  return <div className="app min-h-screen grid place-items-center">
-    <h1 className="text-5xl font-semibold">Hello, Vercel.</h1>
-  </div>;
+  return (
+    <div className="app">
+      {profile ? <Navbar /> : null}
+      <main>
+        <Routes>
+          <Route
+            path=""
+            element={profile ? <Home /> : <Welcome agents={agents} />}
+          />
+          {/* Redirect back to welcome page if profile is not found */}
+          <Route path="/profile" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

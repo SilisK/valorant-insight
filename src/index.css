@@ -16,8 +16,53 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.gizmo {
+button {
+  background-color: aliceblue;
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
+}
+
+a {
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo a,
+.email {
+  text-decoration: none;
+}
+
+input[type="search"],
+input[type="text"] {
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.banner {
+  max-width: 840px;
+  min-height: 540px;
+}
+
+.agent-icon-image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.gizmo-lg {
   width: 56px;
+}
+
+.gizmo-md {
+  width: 36px;
+}
+
+.gizmo {
+  width: 32px;
 }
 
 .loading {
