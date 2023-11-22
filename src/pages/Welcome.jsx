@@ -3,7 +3,7 @@ export default function Welcome({ agents }) {
     <div className="welcome bg min-h-screen grid place-items-center bg-gradient-to-b from-red-400 to-zinc-700 text-white">
       <div className="bg-circle fixed bg-gradient-to-b from-zinc-300 bg-red-500 left-10 bottom-20"></div>
       <div className="grid place-items-center gap-10 z-10">
-        <h1 className="text-5xl font-bold">Choose your agent</h1>
+        <h1 className="text-5xl font-bold text-center">Choose your agent</h1>
         <div className="grid grid-flow-col w-11/12 place-items-center">
           <img
             src="https://www.svgrepo.com/show/522573/left-2.svg"
@@ -21,8 +21,11 @@ export default function Welcome({ agents }) {
             {agents
               ? agents
                   .filter((f_agent) => f_agent.isPlayableCharacter)
-                  .map((agent) => (
-                    <div className="agent-icon grid place-items-center cursor-pointer">
+                  .map((agent, i) => (
+                    <div
+                      className="agent-icon grid place-items-center cursor-pointer"
+                      key={i}
+                    >
                       <div className="agent-icon-image shadow-md hover:shadow-white">
                         <img src={agent.displayIcon} className="h-full" />
                       </div>

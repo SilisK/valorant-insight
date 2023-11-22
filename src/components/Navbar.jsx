@@ -5,6 +5,8 @@ export default function Navbar() {
   const [mobileNav, setMobileNav] = useState();
 
   useEffect(() => {
+    // Initialization
+    setMobileNav(window.innerWidth < 960);
     window.addEventListener("resize", (e) => {
       setMobileNav(e.target.innerWidth < 960);
     });

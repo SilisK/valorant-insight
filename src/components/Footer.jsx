@@ -7,7 +7,7 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/silis-kleemoff" target="_blank">
           LinkedIn
         </a>
-        <p className="grid gap-2 grid-flow-col place-items-center w-max">
+        <div className="grid gap-2 grid-flow-col place-items-center w-max">
           <p>kleemoffdeveloper@gmail.com</p>
           <img
             src="https://www.svgrepo.com/show/447592/copy.svg"
@@ -16,7 +16,7 @@ export default function Footer() {
               navigator.clipboard.writeText("kleemoffdeveloper@gmail.com")
             }
           />
-        </p>
+        </div>
       </div>
       {/*  */}
       <div className="sm:w-1/2 text-left flex flex-col">
