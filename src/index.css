@@ -10,10 +10,26 @@
     transform: rotateZ(360deg);
   }
 }
+@keyframes fade-in {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.extended-nav {
+  animation: fade-in 0.25s;
+}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+img {
+  user-select: none;
 }
 
 button {
@@ -33,15 +49,6 @@ a:hover {
 .logo a,
 .email {
   text-decoration: none;
-}
-
-.selectDisable {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  /* pointer-events: none; */
 }
 
 input[type="search"],

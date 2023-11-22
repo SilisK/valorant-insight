@@ -9,13 +9,14 @@ export default function Footer() {
         </a>
         <div className="grid gap-2 grid-flow-col place-items-center w-max">
           <p>kleemoffdeveloper@gmail.com</p>
-          <img
-            src="https://www.svgrepo.com/show/447592/copy.svg"
-            className="gizmo cursor-pointer bg-white p-1 rounded active:opacity-50 selectDisable"
+          <div
+            className="gizmo cursor-pointer bg-white border-4 rounded active:opacity-50"
             onClick={() =>
               navigator.clipboard.writeText("kleemoffdeveloper@gmail.com")
             }
-          />
+          >
+            <img src="https://www.svgrepo.com/show/447592/copy.svg" className="pointer-events-none"/>
+          </div>
         </div>
       </div>
       {/*  */}

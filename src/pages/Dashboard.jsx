@@ -6,8 +6,12 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (!localStorage.getItem("valorant-insight-data")) {
-      navigate("/");
+      //navigate("/");
     }
   }, []);
-  return <div className="dashboard min-h-screen">Dashboard</div>;
+  return (
+    <div className="dashboard min-h-screen">
+      <div></div>
+    </div>
+  );
 }
