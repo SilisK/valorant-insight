@@ -11,7 +11,7 @@ export default function Footer() {
           <p>kleemoffdeveloper@gmail.com</p>
           <img
             src="https://www.svgrepo.com/show/447592/copy.svg"
-            className="gizmo cursor-pointer bg-white p-1 rounded active:opacity-50"
+            className="gizmo cursor-pointer bg-white p-1 rounded active:opacity-50 selectDisable"
             onClick={() =>
               navigator.clipboard.writeText("kleemoffdeveloper@gmail.com")
             }

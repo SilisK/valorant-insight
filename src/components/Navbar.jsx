@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link to={""} className="flex items-center gap-2">
           <img
             src="https://www.svgrepo.com/show/424907/valorant-logo-play.svg"
-            className="gizmo"
+            className="gizmo selectDisable"
           />
           <p>Valorant Insight</p>
         </Link>
@@ -27,7 +27,7 @@ export default function Navbar() {
       {mobileNav ? (
         <img
           src="https://www.svgrepo.com/show/313139/hamburger-menu.svg"
-          className="gizmo-md cursor-pointer bg-white rounded p-2"
+          className="gizmo-md cursor-pointer bg-white rounded p-2 selectDisable"
           onClick={() => {
             // Toggle Mobile Nav Dropdown
           }}
@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="px-5 flex gap-2 items-center w-1/2">
           <img
             src="https://www.svgrepo.com/show/508177/search-square.svg"
-            className="gizmo bg-white rounded-xl"
+            className="gizmo bg-white rounded-xl selectDisable"
           />
           <input type="search" placeholder="Search" className="w-full" />
         </div>

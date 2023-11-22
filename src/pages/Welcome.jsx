@@ -7,7 +7,7 @@ export default function Welcome({ agents }) {
         <div className="grid grid-flow-col w-11/12 place-items-center">
           <img
             src="https://www.svgrepo.com/show/522573/left-2.svg"
-            className="gizmo-md sm:gizmo-lg cursor-pointer bg-white rounded-full"
+            className="gizmo-md sm:gizmo-lg cursor-pointer bg-white rounded-full selectDisable"
             onClick={() => {
               const layout = document.querySelector("#agent-layout");
               let rect = layout.getBoundingClientRect();
@@ -36,7 +36,7 @@ export default function Welcome({ agents }) {
           </div>
           <img
             src="https://www.svgrepo.com/show/522644/right-2.svg"
-            className="gizmo-md sm:gizmo-lg cursor-pointer bg-white rounded-full"
+            className="gizmo-md sm:gizmo-lg cursor-pointer bg-white rounded-full selectDisable"
             onClick={() => {
               const layout = document.querySelector("#agent-layout");
               let rect = layout.getBoundingClientRect();
