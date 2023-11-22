@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="app">
-      {profile ? <Navbar /> : null}
+      {true ? <Navbar /> : null}
       <main>
         <Routes>
           <Route

@@ -11,7 +11,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-slate-400 w-full flex justify-between p-3">
+    <nav className="bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
       <div className="logo sm:px-5 flex items-center">
         <Link to={""} className="flex items-center gap-2">
           <img
@@ -34,8 +34,8 @@ export default function Navbar() {
       {mobileNav ? null : (
         <div className="px-5 flex gap-2 items-center w-1/2">
           <img
-            src="https://www.svgrepo.com/show/532552/search-alt-2.svg"
-            className="gizmo"
+            src="https://www.svgrepo.com/show/508177/search-square.svg"
+            className="gizmo bg-white rounded-xl"
           />
           <input type="search" placeholder="Search" className="w-full" />
         </div>

@@ -39,11 +39,20 @@ input[type="search"],
 input[type="text"] {
   padding: 5px;
   border-radius: 8px;
+  color: black;
 }
 
 .banner {
   max-width: 840px;
   min-height: 540px;
+}
+
+.agent-icon {
+  transition: 0.2s ease-in-out;
+}
+
+.agent-icon:hover {
+  transform: translateY(-20px);
 }
 
 .agent-icon-image {
@@ -54,7 +63,7 @@ input[type="text"] {
 }
 
 .gizmo-lg {
-  width: 56px;
+  width: 76px;
 }
 
 .gizmo-md {
