@@ -47,6 +47,16 @@ input[type="text"] {
   min-height: 540px;
 }
 
+.bg {
+  z-index: -1;
+}
+
+.bg-circle {
+  width: 600px;
+  height: 600px;
+  border-radius: 100%;
+}
+
 .agent-icon {
   transition: 0.2s ease-in-out;
 }

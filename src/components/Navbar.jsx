@@ -11,7 +11,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
+    <nav className="z-10 absolute bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
       <div className="logo sm:px-5 flex items-center">
         <Link to={""} className="flex items-center gap-2">
           <img
