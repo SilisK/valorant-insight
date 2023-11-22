@@ -73,6 +73,10 @@ input[type="text"] {
   border-radius: 100%;
 }
 
+.agent-banner {
+  max-width: 640px;
+}
+
 .agent-icon {
   transition: 0.2s ease-in-out;
 }

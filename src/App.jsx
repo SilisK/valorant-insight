@@ -29,7 +29,6 @@ function App() {
         setAgents(json.data);
       })
       .catch((error) => {});
-
     console.log(agents);
 
     fetch("https://valorant-api.com/v1/weapons")
