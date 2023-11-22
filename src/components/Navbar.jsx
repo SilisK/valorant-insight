@@ -17,7 +17,16 @@ export default function Navbar() {
 
   return (
     <nav className="z-10 absolute bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
-      <div className="logo sm:px-5 flex items-center">
+      <div
+        className="logo sm:px-5 flex items-center"
+        onClick={() => {
+          document.querySelector('.welcome').scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+        }}
+      >
         <Link to={""} className="flex items-center gap-2">
           <img
             src="https://www.svgrepo.com/show/424907/valorant-logo-play.svg"
