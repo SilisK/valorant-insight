@@ -41,7 +41,7 @@ a:hover {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 input[type="search"],
