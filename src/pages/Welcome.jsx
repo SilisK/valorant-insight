@@ -1,6 +1,6 @@
 export default function Welcome({ agents }) {
   return (
-    <div className="welcome bg h-screen py-10 overflow-y-scroll grid place-items-center bg-gradient-to-b from-red-400 to-zinc-700 text-white">
+    <div className="welcome bg h-screen py-10 overflow-x-hidden overflow-y-scroll grid place-items-center bg-gradient-to-b from-red-400 to-zinc-700 text-white">
       {agents ? (
         agents
           .filter((f) => f.isPlayableCharacter)
