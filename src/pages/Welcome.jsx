@@ -1,7 +1,6 @@
 export default function Welcome({ agents }) {
   return (
     <div className="welcome bg min-h-screen grid place-items-center bg-gradient-to-b from-red-400 to-zinc-700 text-white">
-      <div className="bg-circle fixed bg-gradient-to-b from-zinc-300 bg-red-500 left-10 bottom-20"></div>
       <div className="grid place-items-center gap-10 z-10">
         <h1 className="text-5xl font-bold text-center">Choose your agent</h1>
         <div className="grid grid-flow-col w-11/12 place-items-center">
