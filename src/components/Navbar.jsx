@@ -21,6 +21,7 @@ export default function Navbar() {
       left: 0,
       behavior: "smooth",
     });
+    setMobileNavExtended();
   }
 
   return (

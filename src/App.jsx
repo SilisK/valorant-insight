@@ -47,7 +47,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    <div className="app min-h-screen bg-zinc-700">
       {true ? <Navbar /> : null}
       <main>
         <Routes>
