@@ -15,13 +15,14 @@ export default function Navbar() {
     });
   }, []);
 
-  function scrollToTop(element) {
+  async function scrollToTop(element) {
+    setMobileNavExtended();
+    await new Promise((resolve) => setTimeout(resolve, 100));
     element.scroll({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-    setMobileNavExtended();
   }
 
   return (

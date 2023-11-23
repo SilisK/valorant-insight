@@ -11,14 +11,14 @@ export default function Welcome({ agents }) {
   }, []);
 
   return (
-    <div className="welcome min-h-screen pt-14 bg grid place-items-center text-white">
+    <div className="welcome min-h-screen pt-14 overflow-x-hidden grid place-items-center text-white">
       {agents ? (
         agents
           .filter((f) => f.isPlayableCharacter)
           .map((agent) => (
             <div className="w-full bg-gradient-to-l from-red-400 to-zinc-700 border-b grid place-items-center lg:grid-cols-2 items-start">
               <div
-                className="w-full agent-banner p-5 m-10 grid place-items-center"
+                className="agent-banner p-5 m-10 grid place-items-center"
                 key={agent.displayName}
                 style={{
                   background: `url(${agent.background})`,
@@ -30,7 +30,7 @@ export default function Welcome({ agents }) {
               </div>
               {/*  */}
               <div
-                className="w-full h-full p-10 grid gap-5 justify-between"
+                className="w-full h-full p-5 grid gap-5 justify-between"
                 style={
                   screenWidth > 1024
                     ? {
