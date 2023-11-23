@@ -27,6 +27,7 @@ function App() {
       .then((response) => response.json())
       .then((json) => {
         setAgents(json.data);
+        console.log(json.data[0]);
       })
       .catch((error) => {});
 
