@@ -58,6 +58,10 @@ function App() {
           {/* Redirect back to welcome page if profile is not found */}
           <Route path="/profile" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
+          {/* About Route */}
+          {/* Specific Agent Route (by index query)*/}
+          {/* Specific Weapon Route (by index query)*/}
+          {/* Specific Map Route (by index query)*/}
         </Routes>
       </main>
       <Footer />

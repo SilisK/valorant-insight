@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import loadingIcon from "../assets/loading-svgrepo-com.png";
+import valorantIconWhite from "../assets/valorant-logo-play-2-svgrepo-com-white.png";
 
 export default function Welcome({ agents }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -16,7 +17,10 @@ export default function Welcome({ agents }) {
         agents
           .filter((f) => f.isPlayableCharacter)
           .map((agent) => (
-            <div className="w-full bg-gradient-to-l from-red-400 to-zinc-700 border-b grid place-items-center lg:grid-cols-2 items-start">
+            <div
+              className="w-full bg-gradient-to-l from-red-400 to-zinc-700 border-b grid place-items-center lg:grid-cols-2 items-start"
+              key={agent.uuid}
+            >
               <div
                 className="agent-banner p-5 m-10 grid place-items-center"
                 key={agent.displayName}
@@ -54,8 +58,27 @@ export default function Welcome({ agents }) {
                     </div>
                   </div>
                   {/*  */}
-                  <button className="w-max h-max text-xl">View more</button>
+                  <button className="w-max h-max text-xl">Set as main</button>
                 </h1>
+                {/*  */}
+                <div className="h-max grid grid-flow-col place-items-center text-xs sm:text-md">
+                  {agent.abilities.map((ability) => (
+                    <div
+                      key={ability.displayName}
+                      className="text-center flex flex-col items-center gap-2"
+                    >
+                      <img
+                        src={
+                          ability.displayIcon
+                            ? ability.displayIcon
+                            : valorantIconWhite
+                        }
+                        className="gizmo"
+                      />
+                      <p>{ability.displayName}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))
