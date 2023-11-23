@@ -27,7 +27,10 @@ export default function Navbar() {
     <nav className="z-10 fixed bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
       <div
         className="logo sm:px-5 flex items-center"
-        onClick={() => scrollToTop(document.querySelector(".welcome"))}
+        onClick={() => {
+          scrollToTop(document.querySelector(".welcome"));
+          scrollToTop(window);
+        }}
       >
         <Link to={""} className="flex items-center gap-2">
           <img
@@ -71,7 +74,7 @@ export default function Navbar() {
         </div>
       )}
       {mobileNavExtended ? (
-        <div className="extended-nav absolute w-full bg-slate-400 top-0 left-0 px-5 py-5 grid gap-5 place-items-center">
+        <div className="extended-nav absolute w-full bg-gradient-to-b from-red-500 to-red-900 border-black border-y top-0 left-0 px-5 py-5 grid gap-5 place-items-center">
           <div className="px-2 flex gap-2 items-center w-full">
             <img
               src="https://www.svgrepo.com/show/508177/search-square.svg"

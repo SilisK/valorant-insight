@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="z-10 absolute bg-gradient-to-r from-red-500 to-zinc-800 text-white w-full grid md:grid-flow-col md:place-items-center gap-10 p-10">
+    <footer className="bg-gradient-to-r from-red-500 to-zinc-800 text-white w-full grid md:grid-flow-col md:place-items-center gap-10 p-10">
       <div>
         <h1 className="text-xl font-bold">Contact Info</h1>
 
