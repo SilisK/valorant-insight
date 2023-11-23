@@ -15,17 +15,19 @@ export default function Navbar() {
     });
   }, []);
 
+  function scrollToTop(element) {
+    element.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <nav className="z-10 absolute bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
+    <nav className="z-10 fixed bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
       <div
         className="logo sm:px-5 flex items-center"
-        onClick={() => {
-          document.querySelector('.welcome').scroll({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        }}
+        onClick={() => scrollToTop(document.querySelector(".welcome"))}
       >
         <Link to={""} className="flex items-center gap-2">
           <img
@@ -60,8 +62,12 @@ export default function Navbar() {
       )}
       {mobileNav ? null : (
         <div className="px-5 flex gap-5 items-center">
-          <Link to={"/profile"}>Dashboard</Link>
-          <Link to={"/about"}>About</Link>
+          <Link to={"/profile"} onClick={() => scrollToTop(window)}>
+            Dashboard
+          </Link>
+          <Link to={"/about"} onClick={() => scrollToTop(window)}>
+            About
+          </Link>
         </div>
       )}
       {mobileNavExtended ? (
@@ -73,8 +79,12 @@ export default function Navbar() {
             />
             <input type="search" placeholder="Search" className="w-full" />
           </div>
-          <Link to={"/profile"}>Dashboard</Link>
-          <Link to={"/about"}>About</Link>
+          <Link to={"/profile"} onClick={() => scrollToTop(window)}>
+            Dashboard
+          </Link>
+          <Link to={"/about"} onClick={() => scrollToTop(window)}>
+            About
+          </Link>
           <a className="cursor-pointer" onClick={() => setMobileNavExtended()}>
             Close
           </a>
