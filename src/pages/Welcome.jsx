@@ -61,7 +61,7 @@ export default function Welcome({ agents }) {
                   <button className="w-max h-max text-xl">Set as main</button>
                 </h1>
                 {/*  */}
-                <div className="h-max grid grid-flow-col place-items-center text-xs sm:text-md">
+                <div className="w-full flex flex-wrap justify-between gap-5 p-2 text-xs sm:text-md">
                   {agent.abilities.map((ability) => (
                     <div
                       key={ability.displayName}
