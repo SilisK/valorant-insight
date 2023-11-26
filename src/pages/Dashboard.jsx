@@ -9,9 +9,18 @@ export default function Dashboard() {
       //navigate("/");
     }
   }, []);
+
   return (
-    <div className="dashboard min-h-screen">
-      <div></div>
+    <div className="dashboard text-white min-h-screen pt-16">
+      <div className="border-b p-3">
+        <h1 className="text-5xl font-bold">Dashboard (Section Main)</h1>
+      </div>
+      <div className="border-b p-3">
+        <h1 className="text-5xl font-bold">Section 1</h1>
+      </div>
+      <div className="border-b p-3">
+        <h1 className="text-5xl font-bold">Section 2</h1>
+      </div>
     </div>
   );
 }

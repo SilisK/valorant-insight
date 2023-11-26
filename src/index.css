@@ -19,6 +19,28 @@
   }
 }
 
+@keyframes hovering {
+  50% {
+    transform: translateY(-20px);
+    transform: rotateZ(20deg);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.val-bg {
+  background-color: black;
+  background-image: url("./src/assets/home/val-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.weapon-splash {
+  max-height: 320px;
+}
+
 .extended-nav {
   animation: fade-in 0.25s;
 }
@@ -37,6 +59,12 @@ button {
   background-color: red;
   padding: 8px 16px 8px 16px;
   border-radius: 8px;
+  transition: ease-in-out 0.25s;
+}
+
+button:hover {
+  background-color: rgb(255, 45, 45);
+  box-shadow: 1px 1px 10px red;
 }
 
 a {

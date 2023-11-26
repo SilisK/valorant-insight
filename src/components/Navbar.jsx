@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import searchIcon from "../assets/magnifying-glass-svgrepo-com.png";
 
 export default function Navbar() {
   const [mobileNav, setMobileNav] = useState();
@@ -16,13 +17,13 @@ export default function Navbar() {
   }, []);
 
   /**
-   * 
-   * @param {HTMLElement} element 
+   *
+   * @param {HTMLElement} element
    */
   async function scrollToTop(element) {
     setMobileNavExtended();
     await new Promise((resolve) => setTimeout(resolve, 100));
-    element.scroll({
+    element.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
@@ -30,7 +31,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="z-10 fixed bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
+    <nav className="z-40 fixed shadow-xl bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
       <div
         className="logo sm:px-5 flex items-center"
         onClick={() => {
@@ -62,10 +63,7 @@ export default function Navbar() {
       ) : null}
       {mobileNav ? null : (
         <div className="px-5 flex gap-2 items-center w-1/2">
-          <img
-            src="https://www.svgrepo.com/show/413590/search.svg"
-            className="gizmo pointer-events-none"
-          />
+          <img src={searchIcon} className="gizmo pointer-events-none" />
           <input type="search" placeholder="Search" className="w-full" />
         </div>
       )}
@@ -82,10 +80,7 @@ export default function Navbar() {
       {mobileNavExtended ? (
         <div className="extended-nav absolute w-full bg-gradient-to-b from-red-500 to-red-900 border-black border-y top-0 left-0 px-5 py-5 grid gap-5 place-items-center">
           <div className="px-2 flex gap-2 items-center w-full">
-            <img
-              src="https://www.svgrepo.com/show/413590/search.svg"
-              className="gizmo pointer-events-none"
-            />
+            <img src={searchIcon} className="gizmo pointer-events-none" />
             <input type="search" placeholder="Search" className="w-full" />
           </div>
           <Link to={"/profile"} onClick={() => scrollToTop(window)}>

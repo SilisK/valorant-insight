@@ -6,10 +6,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 // PAGES
-import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Modal from "./components/Modal";
+import Agents from "./pages/Agents";
+import Weapons from "./pages/Weapons";
+import Maps from "./pages/Maps";
 
 function App() {
   const [profile, setProfile] = useState();
@@ -51,14 +55,14 @@ function App() {
       {true ? <Navbar /> : null}
       <main>
         <Routes>
-          <Route
-            path=""
-            element={profile ? <Home /> : <Welcome agents={agents} />}
-          />
+          <Route path="" element={<Home />} />
           {/* Redirect back to welcome page if profile is not found */}
           <Route path="/profile" element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/agents" element={<Agents agents={agents} />} />
+          <Route path="/weapons" element={<Weapons weapons={weapons} />} />
+          <Route path="/maps" element={<Maps maps={maps} />} />
           <Route path="*" element={<NotFound />} />
-          {/* About Route */}
           {/* Specific Agent Route (by index query)*/}
           {/* Specific Weapon Route (by index query)*/}
           {/* Specific Map Route (by index query)*/}
