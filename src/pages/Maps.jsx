@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import loadingIcon from "../assets/loading-svgrepo-com.png";
 
 export default function Maps({ maps }) {
+  useEffect(() => {
+    window.scroll({ top: 0 });
+  }, []);
+
   return (
     <div className="maps min-h-screen pt-14 overflow-x-hidden grid place-items-center text-white">
       {maps ? (

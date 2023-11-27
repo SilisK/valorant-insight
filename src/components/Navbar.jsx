@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
       )}
       {mobileNavExtended ? (
-        <div className="extended-nav absolute w-full bg-gradient-to-b from-red-500 to-red-900 border-black border-y top-0 left-0 px-5 py-5 grid gap-5 place-items-center">
+        <div className="extended-nav absolute w-full bg-gradient-to-b from-red-500/30 to-red-900/30 backdrop-blur top-0 left-0 px-5 py-5 grid gap-5 place-items-center">
           <div className="px-2 flex gap-2 items-center w-full">
             <img src={searchIcon} className="gizmo pointer-events-none" />
             <input type="search" placeholder="Search" className="w-full" />

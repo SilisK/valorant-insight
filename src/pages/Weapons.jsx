@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import loadingIcon from "../assets/loading-svgrepo-com.png";
 
 export default function Weapons({ weapons }) {
+  useEffect(() => {
+    window.scroll({ top: 0 });
+  }, []);
+
   return (
     <div className="weapons min-h-screen pt-14 overflow-x-hidden grid place-items-center text-white">
       {weapons ? (
@@ -41,7 +46,9 @@ export default function Weapons({ weapons }) {
                   </p>
                 </div>
               ) : null}
-              <button>View Weapon</button>
+              <div className="my-10 grid place-items-center sm:block">
+                <button className="my-10">View Weapon</button>
+              </div>
             </section>
           </div>
         ))
