@@ -6,7 +6,7 @@ export default function Agents({ agents }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    window.scroll({top:0})
+    window.scroll({ top: 0 });
     window.addEventListener("resize", (e) => {
       setScreenWidth(e.target.innerWidth);
     });
