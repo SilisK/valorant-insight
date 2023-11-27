@@ -15,9 +15,7 @@ export default function Agents({ agents }) {
   return (
     <div className="agents min-h-screen pt-14 overflow-x-hidden grid place-items-center text-white">
       {agents ? (
-        agents
-          .filter((f) => f.isPlayableCharacter)
-          .map((agent) => (
+          agents.map((agent) => (
             <div
               className="w-full bg-gradient-to-l from-red-400 to-zinc-700 grid place-items-center lg:grid-cols-2 items-start"
               key={agent.uuid}

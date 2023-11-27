@@ -16,6 +16,9 @@ export default function Home() {
           <h2 className="text-md md:text-xl font-semibold">
             Your resource for agents, weapons, maps and more!
           </h2>
+          <h2 className="text-2xl font-bold">
+            Get Started
+          </h2>
           <div className="grid grid-flow-col gap-10">
             <Link to="/agents">
               <button>Agents</button>

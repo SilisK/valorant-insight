@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-red-500 to-zinc-800 text-white w-full grid md:grid-flow-col md:place-items-center gap-10 p-10">
+    <footer className="bg-gradient-to-r from-red-500 to-zinc-800 text-white w-full grid md:grid-flow-col place-items-center gap-10 p-10">
       <a href="https://www.linkedin.com/in/silis-kleemoff/" target="_blank">
         LinkedIn
       </a>

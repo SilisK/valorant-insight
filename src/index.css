@@ -36,8 +36,12 @@
   background-repeat: no-repeat;
 }
 
+.weapon {
+  min-height: 400px;
+}
+
 .weapon-splash {
-  max-height: 320px;
+  max-width: 600px;
 }
 
 .extended-nav {
@@ -51,6 +55,12 @@ body {
 
 img {
   user-select: none;
+}
+
+label {
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 button {
@@ -106,6 +116,7 @@ input[type="text"] {
 }
 
 .agent-icon {
+  width: 100px;
   transition: 0.2s ease-in-out;
 }
 
@@ -114,8 +125,6 @@ input[type="text"] {
 }
 
 .agent-icon-image {
-  width: 100px;
-  height: 100px;
   overflow: hidden;
   border-radius: 100%;
 }

@@ -31,7 +31,6 @@ function App() {
       .then((response) => response.json())
       .then((json) => {
         setAgents(json.data);
-        console.log(json.data[0]);
       })
       .catch((error) => {});
 
@@ -39,6 +38,7 @@ function App() {
       .then((response) => response.json())
       .then((json) => {
         setWeapons(json.data);
+        console.log(json.data[0]);
       })
       .catch((error) => {});
 
@@ -57,9 +57,27 @@ function App() {
         <Routes>
           <Route path="" element={<Home />} />
           {/* Redirect back to welcome page if profile is not found */}
-          <Route path="/profile" element={<Dashboard />} />
+          <Route
+            path="/profile"
+            element={
+              <Dashboard
+                agents={
+                  agents ? agents.filter((f) => f.isPlayableCharacter) : null
+                }
+              />
+            }
+          />
           <Route path="/about" element={<About />} />
-          <Route path="/agents" element={<Agents agents={agents} />} />
+          <Route
+            path="/agents"
+            element={
+              <Agents
+                agents={
+                  agents ? agents.filter((f) => f.isPlayableCharacter) : null
+                }
+              />
+            }
+          />
           <Route path="/weapons" element={<Weapons weapons={weapons} />} />
           <Route path="/maps" element={<Maps maps={maps} />} />
           <Route path="*" element={<NotFound />} />
