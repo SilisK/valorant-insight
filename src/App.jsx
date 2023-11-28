@@ -27,22 +27,36 @@ function App() {
       setProfile(JSON.parse("valorant-insight-data"));
     }
 
-    fetch("https://valorant-api.com/v1/agents")
+    fetch("https://valorant-api.com/v1/agents", {
+      mode: "cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       .then((response) => response.json())
       .then((json) => {
         setAgents(json.data);
       })
       .catch((error) => {});
 
-    fetch("https://valorant-api.com/v1/weapons")
+    fetch("https://valorant-api.com/v1/weapons", {
+      mode: "cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       .then((response) => response.json())
       .then((json) => {
         setWeapons(json.data);
-        console.log(json.data[0]);
       })
       .catch((error) => {});
 
-    fetch("https://valorant-api.com/v1/maps")
+    fetch("https://valorant-api.com/v1/maps", {
+      mode: "cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       .then((response) => response.json())
       .then((json) => {
         setMaps(json.data);
