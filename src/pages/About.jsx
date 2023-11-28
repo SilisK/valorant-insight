@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className="about text-white min-h-screen pt-14">
-      <div className="grid gap-20 place-items-center py-10">
+      <div className="grid gap-5 place-items-center py-10">
         <div className="p-3 grid gap-5 justify-center w-11/12 lg:w-4/6">
           <h1 className="text-5xl font-bold">A useful resource</h1>
           <p className="bg-slate-100/10 rounded p-3">

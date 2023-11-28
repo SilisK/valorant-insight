@@ -30,6 +30,7 @@
 }
 
 .val-bg {
+  background-image: url(https://github.com/SilisK/valorant-insight/blob/main/src/assets/home/val-bg.jpg?raw=true);
   background-color: black;
   background-position: center;
   background-size: cover;
