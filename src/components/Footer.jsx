@@ -29,7 +29,7 @@ export default function Footer() {
               src="https://www.svgrepo.com/show/447137/github-fill.svg"
               className="cursor-pointer w-14 bg-white rounded-full"
               onClick={() => {
-                window.open("https://www.linkedin.com/in/silis-kleemoff/");
+                window.open("https://github.com/SilisK");
               }}
             />
           </div>
