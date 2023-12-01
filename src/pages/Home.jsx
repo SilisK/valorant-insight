@@ -29,7 +29,7 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
           )} grid place-items-center border-gray border-4 rounded-xl bg-black`}
           style={{
             backgroundImage:
-              "url(https://github.com/SilisK/valorant-insight/blob/main/src/assets/home/val-bg.jpg?raw=true)",
+              "url(https://github.com/SilisK/valorant-insight/blob/main/src/assets/home/main-background.jpg?raw=true)",
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -122,15 +122,22 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
         <div
           className="medium-banner rounded-xl grid justify-end"
           style={{
-            backgroundImage: `url(${demoMap.splash})`,
+            backgroundImage: `url(${demoMap ? demoMap.splash : ""})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
         >
-          <div className="flex flex-col justify-between p-10 text-white bg-zinc-700/50">
-            <h2 className="text-3xl font-bold">{demoMap.displayName}</h2>
-            <button>View Map</button>
-          </div>
+          {demoMap ? (
+            <div className="flex flex-col justify-between p-10 text-white bg-zinc-700/50">
+              <h2 className="text-3xl font-bold">{demoMap.displayName}</h2>
+              <button>View Map</button>
+            </div>
+          ) : (
+            <img
+              src={loadingIcon}
+              className="loading w-20 bg-slate-100/90 rounded-full"
+            />
+          )}
         </div>
         {/*  */}
         {/* <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold drop-shadow-md">

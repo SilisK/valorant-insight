@@ -19,7 +19,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setAgents(data.data.filter((f) => f.isPlayableCharacter));
-        console.log(data.data);
+        // console.log(data.data);
       })
       .catch((error) => {});
 
@@ -27,7 +27,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setWeapons(data.data);
-        console.log(data.data);
+        // console.log(data.data);
       })
       .catch((error) => {});
 
@@ -35,7 +35,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setMaps(data.data);
-        console.log(data.data);
+        // console.log(data.data);
       })
       .catch((error) => {});
   }, []);
