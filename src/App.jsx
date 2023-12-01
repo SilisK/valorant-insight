@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // COMPONENTS
@@ -6,99 +5,70 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 // PAGES
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
-import About from "./pages/About";
-import Modal from "./components/Modal";
-import Agents from "./pages/Agents";
-import Weapons from "./pages/Weapons";
-import Maps from "./pages/Maps";
+import Home from "./pages/Home";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [profile, setProfile] = useState();
-
   const [agents, setAgents] = useState();
   const [weapons, setWeapons] = useState();
   const [maps, setMaps] = useState();
 
   useEffect(() => {
-    if (localStorage.getItem("valorant-insight-data")) {
-      setProfile(JSON.parse("valorant-insight-data"));
-    }
-
-    fetch("https://valorant-api.com/v1/agents", {
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    fetch("https://valorant-api.com/v1/agents")
       .then((response) => response.json())
-      .then((json) => {
-        setAgents(json.data);
+      .then((data) => {
+        setAgents(data.data.filter((f) => f.isPlayableCharacter));
+        console.log(data.data);
       })
       .catch((error) => {});
 
-    fetch("https://valorant-api.com/v1/weapons", {
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    fetch("https://valorant-api.com/v1/weapons")
       .then((response) => response.json())
-      .then((json) => {
-        setWeapons(json.data);
+      .then((data) => {
+        setWeapons(data.data);
+        console.log(data.data);
       })
       .catch((error) => {});
 
-    fetch("https://valorant-api.com/v1/maps", {
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    fetch("https://valorant-api.com/v1/maps")
       .then((response) => response.json())
-      .then((json) => {
-        setMaps(json.data);
+      .then((data) => {
+        setMaps(data.data);
+        console.log(data.data);
       })
       .catch((error) => {});
   }, []);
 
   return (
-    <div className="app min-h-screen bg-zinc-700">
-      {true ? <Navbar /> : null}
-      <main>
-        <Routes>
-          <Route path="" element={<Home />} />
-          {/* Redirect back to welcome page if profile is not found */}
-          <Route
-            path="/profile"
-            element={
-              <Dashboard
-                agents={
-                  agents ? agents.filter((f) => f.isPlayableCharacter) : null
-                }
-              />
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route
-            path="/agents"
-            element={
-              <Agents
-                agents={
-                  agents ? agents.filter((f) => f.isPlayableCharacter) : null
-                }
-              />
-            }
-          />
-          <Route path="/weapons" element={<Weapons weapons={weapons} />} />
-          <Route path="/maps" element={<Maps maps={maps} />} />
-          <Route path="*" element={<NotFound />} />
-          {/* Specific Agent Route (by index query)*/}
-          {/* Specific Weapon Route (by index query)*/}
-          {/* Specific Map Route (by index query)*/}
-        </Routes>
+    <div className="app">
+      <main className="w-full min-h-screen">
+        <Navbar />
+        <div className="py-14">
+          <Routes>
+            <Route
+              path=""
+              element={
+                <Home
+                  demoAgent={
+                    agents
+                      ? agents[Math.floor(agents.length * Math.random())]
+                      : null
+                  }
+                  demoWeapon={
+                    weapons
+                      ? weapons[Math.floor(weapons.length * Math.random())]
+                      : null
+                  }
+                  demoMap={
+                    maps ? maps[Math.floor(maps.length * Math.random())] : null
+                  }
+                />
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </main>
       <Footer />
     </div>

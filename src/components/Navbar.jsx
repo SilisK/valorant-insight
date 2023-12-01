@@ -1,98 +1,65 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import searchIcon from "../assets/magnifying-glass-svgrepo-com.png";
+import logo from "../assets/valorant-logo.png";
+import { useEffect, useState } from "react";
+import hamburgerMenuIcon from "../assets/hamburger-menu-svgrepo-com.png";
+
+function NavbarLinks({ mobile }) {
+  return (
+    <div
+      className={`nav-links flex gap-10 ${
+        mobile
+          ? "p-5 absolute top-16 left-0 w-full bg-dark-grey-theme flex-col place-items-center shadow-xl rounded-b-xl"
+          : ""
+      }`}
+    >
+      <Link to="/agents">Agents</Link>
+      <Link to="/weapons">Weapons</Link>
+      <Link to="/maps">Maps</Link>
+      <Link to="/dashboard">Dashboard</Link>
+    </div>
+  );
+}
 
 export default function Navbar() {
-  const [mobileNav, setMobileNav] = useState();
-  const [mobileNavExtended, setMobileNavExtended] = useState();
+  const [mobileWidth, setMobileWidth] = useState(false);
+  const [mobileNavbarToggled, setMobileNavbar] = useState(false);
 
   useEffect(() => {
     // Initialization
-    let toggleMobile = window.innerWidth < 960;
-    setMobileNav(toggleMobile);
+    setMobileWidth(window.innerWidth < 1024);
+
+    // Only called when user is resizing their window
     window.addEventListener("resize", (e) => {
-      setMobileNav(e.target.innerWidth < 960);
-      setMobileNavExtended();
+      setMobileWidth(e.target.innerWidth < 1024);
     });
   }, []);
 
-  /**
-   *
-   * @param {HTMLElement} element
-   */
-  async function scrollToTop(element) {
-    setMobileNavExtended();
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    element.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  }
-
   return (
-    <nav className="z-40 fixed shadow-xl bg-gradient-to-l from-red-500 to-zinc-800 text-white w-full flex justify-between p-3">
-      <div
-        className="logo sm:px-5 flex items-center"
-        onClick={() => {
-          scrollToTop(document.querySelector(".welcome"));
-          scrollToTop(window);
-        }}
-      >
-        <Link to={""} className="flex items-center gap-2">
-          <img
-            src="https://www.svgrepo.com/show/424907/valorant-logo-play.svg"
-            className="gizmo selectDisable"
-          />
-          <p>Valorant Insight</p>
-        </Link>
-      </div>
-      {/*  */}
-      {mobileNav ? (
-        <div
-          className="gizmo-md cursor-pointer bg-white rounded p-2"
-          onClick={() => {
-            setMobileNavExtended(true);
-          }}
-        >
-          <img
-            src="https://www.svgrepo.com/show/313139/hamburger-menu.svg"
-            className="pointer-events-none"
-          />
-        </div>
+    <nav className="fixed w-screen z-50 bg-dark-grey-theme p-3 text-white flex justify-between items-center lg:px-10">
+      {/* Logo */}
+      <Link to="" className="logo flex items-center gap-5 w-max">
+        <img src={logo} className="w-10" />
+        <b>Valorant Insight</b>
+      </Link>
+      {/* Mobile Nav — Hamburger Menu */}
+      {mobileWidth && !mobileNavbarToggled ? (
+        <img
+          src={hamburgerMenuIcon}
+          className="w-10 cursor-pointer"
+          onClick={() => setMobileNavbar(true)}
+        />
+      ) : mobileWidth && mobileNavbarToggled ? (
+        <img
+          src="https://www.svgrepo.com/show/522506/close.svg"
+          className="w-10 p-3 absolute right-2 cursor-pointer bg-white rounded"
+          onClick={() => setMobileNavbar(false)}
+        />
       ) : null}
-      {mobileNav ? null : (
-        <div className="px-5 flex gap-2 items-center w-1/2">
-          <img src={searchIcon} className="gizmo pointer-events-none" />
-          <input type="search" placeholder="Search" className="w-full" />
-        </div>
-      )}
-      {mobileNav ? null : (
-        <div className="px-5 flex gap-5 items-center">
-          <Link to={"/profile"} onClick={() => scrollToTop(window)}>
-            Dashboard
-          </Link>
-          <Link to={"/about"} onClick={() => scrollToTop(window)}>
-            About
-          </Link>
-        </div>
-      )}
-      {mobileNavExtended ? (
-        <div className="extended-nav absolute w-full bg-gradient-to-b from-red-500/30 to-red-900/30 backdrop-blur top-0 left-0 px-5 py-5 grid gap-5 place-items-center">
-          <div className="px-2 flex gap-2 items-center w-full">
-            <img src={searchIcon} className="gizmo pointer-events-none" />
-            <input type="search" placeholder="Search" className="w-full" />
-          </div>
-          <Link to={"/profile"} onClick={() => scrollToTop(window)}>
-            Dashboard
-          </Link>
-          <Link to={"/about"} onClick={() => scrollToTop(window)}>
-            About
-          </Link>
-          <a className="cursor-pointer" onClick={() => setMobileNavExtended()}>
-            Close
-          </a>
-        </div>
+      {/* Nav Links */}
+      {mobileWidth && mobileNavbarToggled ? (
+        <NavbarLinks mobile={true} />
+      ) : !mobileWidth ? (
+        <NavbarLinks />
       ) : null}
     </nav>
   );
