@@ -62,7 +62,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed w-screen z-50 bg-dark-grey-theme p-3 text-white flex justify-between items-center lg:px-10">
+    <nav className="fixed top-0 w-screen z-50 bg-dark-grey-theme p-3 text-white flex justify-between items-center lg:px-10">
       {/* Logo */}
       <Link to="" className="logo flex items-center gap-5 w-max">
         <img src={logo} className="w-10" />
