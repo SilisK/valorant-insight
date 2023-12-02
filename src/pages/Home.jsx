@@ -5,6 +5,7 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
+    window.scroll(0, 0);
     window.addEventListener("resize", (e) => {
       setScreenWidth(e.target.innerWidth);
     });
@@ -76,7 +77,7 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
               }}
             >
               <img src={demoAgent.bustPortrait} />
-              <div className="w-11/12 text-white grid gap-5 items-center px-3 py-5 bg-gradient-to-r from-zinc-700 to-red-500 rounded-t-xl">
+              <div className="text-white grid gap-5 items-center px-3 py-5 bg-gradient-to-r from-zinc-700/50 to-red-500/50 rounded-t-xl">
                 <h2 className="text-3xl font-bold">{demoAgent.displayName}</h2>
                 <p>{demoAgent.description}</p>
                 <div className="flex justify-center">

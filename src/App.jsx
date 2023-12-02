@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import { useEffect, useState } from "react";
+import Agents from "./pages/Agents";
 
 function App() {
   const [agents, setAgents] = useState();
@@ -44,7 +45,7 @@ function App() {
     <div className="app">
       <main className="w-full min-h-screen">
         <Navbar />
-        <div className="py-14">
+        <div className="pt-14">
           <Routes>
             <Route
               path=""
@@ -66,6 +67,7 @@ function App() {
                 />
               }
             />
+            <Route path="/agents" element={<Agents agents={agents} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

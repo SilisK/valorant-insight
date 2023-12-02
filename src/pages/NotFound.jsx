@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function NotFound() {
+  useEffect(() => {
+    scroll(0, 0);
+  }, []);
+
   return (
     <div className="not-found min-h-screen grid place-items-center">
       <div className="flex p-5 flex-col items-center text-center gap-5">
