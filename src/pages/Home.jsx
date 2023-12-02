@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import loadingIcon from "../assets/loading-svgrepo-com.png";
+import { Link } from "react-router-dom";
 
 export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -81,7 +82,9 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
                 <h2 className="text-3xl font-bold">{demoAgent.displayName}</h2>
                 <p>{demoAgent.description}</p>
                 <div className="flex justify-center">
-                  <button className="w-max">View Agent</button>
+                  <Link to={`/agent?uuid=${demoAgent.uuid}`}>
+                    <button className="w-max">View Agent</button>
+                  </Link>
                 </div>
               </div>
             </div>

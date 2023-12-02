@@ -12,6 +12,7 @@ import Agents from "./pages/Agents";
 import Weapons from "./pages/Weapons";
 import Maps from "./pages/Maps";
 import Dashboard from "./pages/Dashboard";
+import Agent from "./pages/Agent";
 
 function App() {
   const [agents, setAgents] = useState();
@@ -73,7 +74,8 @@ function App() {
             <Route path="/agents" element={<Agents agents={agents} />} />
             <Route path="/weapons" element={<Weapons weapons={weapons} />} />
             <Route path="/maps" element={<Maps maps={maps} />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/agent" element={<Agent agents={agents} />} />
+            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

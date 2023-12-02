@@ -54,6 +54,11 @@ img {
   max-width: 100%;
 }
 
+.icon {
+  width: 250px;
+  height: 250px;
+}
+
 button {
   background-color: red;
   padding: 8px 16px 8px 16px;

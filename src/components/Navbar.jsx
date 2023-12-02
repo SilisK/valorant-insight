@@ -38,7 +38,7 @@ function NavbarLinks({ mobile, setMobileNavbar }) {
       <Link to="/agents">Agents</Link>
       <Link to="/weapons">Weapons</Link>
       <Link to="/maps">Maps</Link>
-      <Link to="/dashboard">Dashboard</Link>
+      {/* <Link to="/dashboard">Dashboard</Link> */}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import loadingIcon from "../assets/loading-svgrepo-com.png";
 import valorantIconWhite from "../assets/valorant-logo.png";
+import { Link } from "react-router-dom";
 
 export default function Agents({ agents }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -83,7 +84,9 @@ export default function Agents({ agents }) {
                 </div>
                 <div className="grid place-items-center lg:block">
                   {" "}
-                  <button className="w-max h-max text-xl">View Agent</button>
+                  <Link to={`/agent?uuid=${agent.uuid}`}>
+                    <button className="w-max h-max text-xl">View Agent</button>
+                  </Link>
                 </div>
               </div>
             </div>
