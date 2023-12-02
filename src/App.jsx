@@ -10,6 +10,8 @@ import Home from "./pages/Home";
 import { useEffect, useState } from "react";
 import Agents from "./pages/Agents";
 import Weapons from "./pages/Weapons";
+import Maps from "./pages/Maps";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [agents, setAgents] = useState();
@@ -70,6 +72,8 @@ function App() {
             />
             <Route path="/agents" element={<Agents agents={agents} />} />
             <Route path="/weapons" element={<Weapons weapons={weapons} />} />
+            <Route path="/maps" element={<Maps maps={maps} />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
