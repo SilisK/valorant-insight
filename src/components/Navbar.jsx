@@ -3,7 +3,30 @@ import logo from "../assets/valorant-logo.png";
 import { useEffect, useState } from "react";
 import hamburgerMenuIcon from "../assets/hamburger-menu-svgrepo-com.png";
 
-function NavbarLinks({ mobile }) {
+async function scrollToTop(setMobileNavbar) {
+  if (setMobileNavbar) {
+    setMobileNavbar(false);
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
+function NavbarLinks({ mobile, setMobileNavbar }) {
+  useEffect(() => {
+    for (const link of document
+      .querySelector(".nav-links")
+      .querySelectorAll("a")) {
+      link.addEventListener("click", () => {
+        scrollToTop(setMobileNavbar);
+      });
+    }
+  }, []);
+
   return (
     <div
       className={`nav-links flex gap-10 ${
@@ -26,6 +49,10 @@ export default function Navbar() {
 
   useEffect(() => {
     // Initialization
+    for (const link of document.querySelector("nav").querySelectorAll("a")) {
+      link.addEventListener("click", () => scrollToTop(setMobileNavbar));
+    }
+
     setMobileWidth(window.innerWidth < 1024);
 
     // Only called when user is resizing their window
@@ -57,7 +84,7 @@ export default function Navbar() {
       ) : null}
       {/* Nav Links */}
       {mobileWidth && mobileNavbarToggled ? (
-        <NavbarLinks mobile={true} />
+        <NavbarLinks mobile={true} setMobileNavbar={setMobileNavbar} />
       ) : !mobileWidth ? (
         <NavbarLinks />
       ) : null}

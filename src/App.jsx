@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import { useEffect, useState } from "react";
 import Agents from "./pages/Agents";
+import Weapons from "./pages/Weapons";
 
 function App() {
   const [agents, setAgents] = useState();
@@ -68,6 +69,7 @@ function App() {
               }
             />
             <Route path="/agents" element={<Agents agents={agents} />} />
+            <Route path="/weapons" element={<Weapons weapons={weapons} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
