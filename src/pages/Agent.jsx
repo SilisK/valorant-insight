@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import valorantIconWhite from "../assets/valorant-logo.png"
 
 export default function Agent({ agents }) {
   const [searchParams, setSearchParams] = useSearchParams();
