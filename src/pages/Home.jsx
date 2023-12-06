@@ -24,19 +24,11 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
 
   return (
     <div className="home min-h-screen grid items-start">
-      <section className="w-full border-b-4 grid gap-10 place-items-center py-10 md:px-5 lg:px-10">
-        <div
-          className={`${banner(
-            screenWidth
-          )} grid place-items-center md:border-4 md:rounded-xl bg-black`}
-          style={{
-            backgroundImage:
-              "url(https://github.com/SilisK/valorant-insight/blob/main/src/assets/home/main-background.jpg?raw=true)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="w-full text-white grid justify-center">
+      <section
+        className="home-background w-full text-white border-b-4 grid gap-10 place-items-center py-10 md:px-5 lg:px-10"
+      >
+        <div className={`${banner(screenWidth)} grid place-items-center`}>
+          <div className="w-full grid justify-center">
             <h1 className="text-2xl md:text-6xl lg:text-8xl font-bold drop-shadow-md">
               Valorant Insight
             </h1>
