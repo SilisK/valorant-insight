@@ -62,7 +62,7 @@ img {
 .home-background   {
   background-position: center;
   background-size: cover;
-  background-image: url("https://github.com/SilisK/valorant-insight/blob/main/src/assets/home/main-background.jpg?raw=true");
+  background-image: url(assets/home/main-background.jpg);
 }
 
 button {
