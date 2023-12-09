@@ -24,11 +24,9 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
 
   return (
     <div className="home min-h-screen grid items-start">
-      <section
-        className="home-background w-full text-white border-b-4 grid gap-10 place-items-center py-10 md:px-5 lg:px-10"
-      >
+      <section className="home-background w-full text-white border-b-4 grid gap-10 place-items-center py-10 md:px-5 lg:px-10">
         <div className={`${banner(screenWidth)} grid place-items-center`}>
-          <div className="w-full grid justify-center">
+          <div className="w-full grid justify-center text-center">
             <h1 className="text-2xl md:text-6xl lg:text-8xl font-bold drop-shadow-md">
               Valorant Insight
             </h1>
@@ -96,7 +94,7 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
             <div className="w-full p-5 grid place-items-center bg-gradient-to-b from-zinc-400">
               <div className="grid gap-5">
                 <img src={demoWeapon.displayIcon} />
-                <div className="flex justify-between">
+                <div className="flex flex-col gap-10 items-center">
                   <h2 className="text-3xl font-bold">
                     {demoWeapon.displayName}
                   </h2>
@@ -135,11 +133,6 @@ export default function Home({ demoAgent, demoWeapon, demoMap, demoMore }) {
             />
           )}
         </div>
-        {/*  */}
-        {/* <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold drop-shadow-md">
-          And More...
-        </h1>
-        <div className="medium-banner rounded-xl"></div> */}
       </section>
     </div>
   );

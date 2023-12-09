@@ -31,7 +31,6 @@
   max-width: 2160px;
   min-height: 840px;
   width: 100%;
-  /* box-shadow: 1px 1px 10px black; */
   overflow: hidden;
 }
 
@@ -39,19 +38,13 @@
   max-width: 940px;
   min-height: 426px;
   width: 100%;
-  /* box-shadow: 1px 1px 10px black; */
   overflow: hidden;
 }
 
 .small-banner {
   min-height: 264px;
   width: 100%;
-  /* box-shadow: 1px 1px 5px black; */
   overflow: hidden;
-}
-
-img {
-  max-width: 100%;
 }
 
 .icon {

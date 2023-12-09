@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import valorantIconWhite from "../assets/valorant-logo.png"
+import valorantIconWhite from "../assets/valorant-logo.png";
 
 export default function Agent({ agents }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -27,11 +27,16 @@ export default function Agent({ agents }) {
       </h1>
       <div className="medium-banner grid bg-dark-grey-theme text-white md:rounded-xl md:border-4">
         {agent ? (
-          <div className="bg-gradient-to-l grid gap-5 from-red-500 p-3 rounded">
+          <div
+            className="grid gap-5 p-3 rounded"
+            style={{
+              background: `linear-gradient(45deg, #${agent.backgroundGradientColors[1]}, #${agent.backgroundGradientColors[0]}), linear-gradient(0deg, #${agent.backgroundGradientColors[2]}, #${agent.backgroundGradientColors[3]})`,
+            }}
+          >
             <div className="flex flex-col gap-5 sm:flex-row items-center justify-between">
               <img
                 src={agent.displayIcon}
-                className="icon rounded-full border-4 bg-black"
+                className="icon rounded-full border-4 bg-white"
               />
               <div className="w-11/12 h-full flex flex-wrap gap-2 items-center justify-between px-10 text-xs sm:text-md">
                 {agent.abilities.map((ability) => (
@@ -61,7 +66,7 @@ export default function Agent({ agents }) {
       <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold drop-shadow-md">
         Full Portrait
       </h1>
-      <div className="medium-banner py-5 bg-dark-grey-theme text-white md:rounded-xl md:border-4">
+      <div className="medium-banner py-5 bg-gradient-to-r from-red-500 to-zinc-700 text-white md:rounded-xl md:border-4">
         {agent ? (
           <div
             style={{
